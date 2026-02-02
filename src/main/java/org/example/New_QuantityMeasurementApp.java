@@ -27,7 +27,7 @@ public class New_QuantityMeasurementApp {
     }
 
 
-    static class Inches {
+    public static class Inches {
         private final double value;
 
         public Inches(double value) {
