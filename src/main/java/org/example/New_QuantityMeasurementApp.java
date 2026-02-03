@@ -26,7 +26,6 @@ public class New_QuantityMeasurementApp {
         }
     }
 
-
     public static class Inches {
         private final double value;
 
@@ -73,29 +72,44 @@ public class New_QuantityMeasurementApp {
         }
 
     }
-
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.println("Enter first value:");
+//        double v1 = sc.nextDouble();
+//        System.out.println("Enter unit (FEET or INCH):");
+//        Length.LengthUnit u1 = Length.LengthUnit.valueOf(sc.next().toUpperCase());
+//
+//        System.out.println("Enter second value:");
+//        double v2 = sc.nextDouble();
+//        System.out.println("Enter unit (FEET or INCH):");
+//        Length.LengthUnit u2 = Length.LengthUnit.valueOf(sc.next().toUpperCase());
+//
+//        Length.QuantityLength q1 = new Length.QuantityLength(v1, u1);
+//        Length.QuantityLength q2 = new Length.QuantityLength(v2, u2);
+//
+//        System.out.println("Are both values equal? " + q1.equals(q2));
+//    }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter first value in feet:");
-        double ft1 = sc.nextDouble();
+        System.out.println("Enter first value:");
+        double v1 = sc.nextDouble();
 
-        System.out.println("Enter second value in feet:");
-        double ft2 = sc.nextDouble();
+        System.out.println("Enter first unit (FEET / INCHES):");
+        Length.Unit u1 = Length.Unit.valueOf(sc.next().toUpperCase());
 
+        System.out.println("Enter second value:");
+        double v2 = sc.nextDouble();
 
-        CheckFeetEquality(ft1, ft2);
+        System.out.println("Enter second unit (FEET / INCHES):");
+        Length.Unit u2 = Length.Unit.valueOf(sc.next().toUpperCase());
 
+        Length l1 = new Length(v1, u1);
+        Length l2 = new Length(v2, u2);
 
-        System.out.println("Enter first value in Inches:");
-        double in1 = sc.nextDouble();
-
-        System.out.println("Enter second value in Inches:");
-        double in2 = sc.nextDouble();
-
-
-        CheckInchesEquality(in1, in2);
+        System.out.println("Equal : " + l1.equals(l2));
     }
 }

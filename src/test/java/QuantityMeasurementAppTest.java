@@ -1,7 +1,4 @@
-//public class QuantityMeasurementAppTest {
-
-
-
+package org.example;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -75,8 +72,71 @@ import org.example.New_QuantityMeasurementApp .Inches;
             assertTrue(i1.equals(i1));
         }
 
+
+
+
+        // uc3
+
+        @Test
+        public void testFeetEquality() {
+            Length feet1 = new Length(1.0, Length.Unit.FEET);
+            Length feet2 = new Length(1.0, Length.Unit.FEET);
+
+            assertTrue(feet1.equals(feet2));
+        }
+
+        @Test
+        public void testInchesEquality() {
+            Length inches1 = new Length(1.0, Length.Unit.INCHES);
+            Length inches2 = new Length(1.0, Length.Unit.INCHES);
+
+            assertTrue(inches1.equals(inches2));
+        }
+
+        @Test
+        public void testFeetInchesComparison() {
+            Length feet = new Length(1.0, Length.Unit.FEET);
+            Length inches = new Length(12.0, Length.Unit.INCHES);
+
+            assertTrue(feet.equals(inches));
+        }
+
+        @Test
+        public void testFeetInequality() {
+            Length feet1 = new Length(1.0, Length.Unit.FEET);
+            Length feet2 = new Length(2.0, Length.Unit.FEET);
+
+            assertFalse(feet1.equals(feet2));
+        }
+
+        @Test
+        public void testInchesInequality() {
+            Length inches1 = new Length(5.0, Length.Unit.INCHES);
+            Length inches2 = new Length(10.0, Length.Unit.INCHES);
+
+            assertFalse(inches1.equals(inches2));
+        }
+
+        @Test
+        public void testCrossUnitInequality() {
+            Length feet = new Length(1.0, Length.Unit.FEET);
+            Length inches = new Length(10.0, Length.Unit.INCHES);
+
+            assertFalse(feet.equals(inches));
+        }
+
+        @Test
+        public void testMultipleFeetComparison() {
+            Length feet1 = new Length(3.0, Length.Unit.FEET);
+            Length feet2 = new Length(36.0, Length.Unit.INCHES);
+
+            assertTrue(feet1.equals(feet2));
+        }
+
+
+
     }
 
 
 
-//}
+
